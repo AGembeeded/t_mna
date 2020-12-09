@@ -1,0 +1,1033 @@
+{
+    "ver": "1.0",
+    "_cls": "Model",
+    "name": "all_basic_components",
+    "core_model_id": "20a65234-3a14-11eb-9be9-8c1645329d22",
+    "vars": {
+        "sys_cpu_exec_rate_1": 0.0001,
+        "sys_cpu_exec_rate_2": 0.05
+    },
+    "dev_partitions": [
+        {
+            "_cls": "DevPartition",
+            "nodes": [
+                {
+                    "_cls": "Node",
+                    "id": 2083470920288,
+                    "terminals": [
+                        2083470955520,
+                        2083470946368,
+                        2083470898752,
+                        2083472317024,
+                        2083472315008,
+                        2083472538256,
+                        2083472317264,
+                        2083472301936
+                    ]
+                },
+                {
+                    "_cls": "Node",
+                    "id": 2083470919280,
+                    "terminals": [
+                        2083472317456,
+                        2083470955184,
+                        2083472317120,
+                        2083472300208,
+                        2083470900528,
+                        2083470774128,
+                        2083472317360,
+                        2083470900720
+                    ]
+                }
+            ],
+            "components": [
+                {
+                    "_cls": "Component",
+                    "id": 2083470770288,
+                    "name": "L1",
+                    "vars": {
+                        "inductance": 0.001
+                    },
+                    "comp_type": "pas_inductor",
+                    "lib_fqn": "Passive Components.Inductor",
+                    "composite": false,
+                    "properties": [
+                        {
+                            "_cls": "Property",
+                            "name": "visible",
+                            "value": true,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "inductance",
+                            "value": 0.001,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "pole_shift_ignore",
+                            "value": false,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "initial_current",
+                            "value": 0.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        }
+                    ],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083470955520,
+                            "name": "p_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083470774128,
+                            "name": "n_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [],
+                    "parent_comp_id": null,
+                    "target_cpu": null,
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ]
+                },
+                {
+                    "_cls": "Component",
+                    "id": 2083472301744,
+                    "name": "C1",
+                    "vars": {
+                        "capacitance": 0.0001
+                    },
+                    "comp_type": "pas_capacitor",
+                    "lib_fqn": "Passive Components.Capacitor",
+                    "composite": false,
+                    "properties": [
+                        {
+                            "_cls": "Property",
+                            "name": "initial_voltage",
+                            "value": 0.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "pole_shift_ignore",
+                            "value": false,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "visible",
+                            "value": true,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "capacitance",
+                            "value": 0.0001,
+                            "vector": false,
+                            "calc_type": "real"
+                        }
+                    ],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083472300208,
+                            "name": "n_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083472301936,
+                            "name": "p_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [],
+                    "parent_comp_id": null,
+                    "target_cpu": null,
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ]
+                },
+                {
+                    "_cls": "Component",
+                    "id": 2083472315104,
+                    "name": "S1",
+                    "vars": {},
+                    "comp_type": "Single Pole Single Throw Contactor",
+                    "lib_fqn": "Contactors.Ideal.Single Pole Single Throw Contactor",
+                    "composite": true,
+                    "properties": [],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083472315008,
+                            "name": "a_in",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083470900528,
+                            "name": "a_out",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [
+                        {
+                            "_cls": "Mask",
+                            "vars": {
+                                "prop_names": [
+                                    "Sa"
+                                ],
+                                "ITEM_COMPONENT": "component",
+                                "ITEM_PORT": "port",
+                                "WARNING_GENERAL": "General warning",
+                                "ctrl_src": "Digital input",
+                                "enable_fb_out": "False",
+                                "execution_rate": "inherit"
+                            },
+                            "properties": [
+                                {
+                                    "_cls": "Property",
+                                    "name": "Sa",
+                                    "value": "1",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "enable_fb_out",
+                                    "value": "False",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "initial_state",
+                                    "value": "off",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "ctrl_src",
+                                    "value": "Digital input",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "Sa_logic",
+                                    "value": "active high",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "on_delay",
+                                    "value": 0.0,
+                                    "vector": false,
+                                    "calc_type": "real"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "fb_out_type",
+                                    "value": "real",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "off_delay",
+                                    "value": 0.0,
+                                    "vector": false,
+                                    "calc_type": "real"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "execution_rate",
+                                    "value": "inherit",
+                                    "vector": false,
+                                    "calc_type": "real"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "switching",
+                                    "value": "any current",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                }
+                            ]
+                        }
+                    ],
+                    "parent_comp_id": null,
+                    "target_cpu": null,
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ]
+                },
+                {
+                    "_cls": "Component",
+                    "id": 2083472317168,
+                    "name": "Is1",
+                    "vars": {
+                        "number_of_terminals": 0
+                    },
+                    "comp_type": "src_current",
+                    "lib_fqn": "Sources.Current Source",
+                    "composite": false,
+                    "properties": [
+                        {
+                            "_cls": "Property",
+                            "name": "init_source_nature",
+                            "value": "Constant",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "init_const_value",
+                            "value": 0.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "init_rms_value",
+                            "value": 0.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "init_frequency",
+                            "value": 50.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "init_phase",
+                            "value": 0.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "sig_input",
+                            "value": "False",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "type",
+                            "value": "signal generator",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "param_set",
+                            "value": "1phase",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "parent_label",
+                            "value": "",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "addr",
+                            "value": 0,
+                            "vector": false,
+                            "calc_type": "uint"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "spc_nb",
+                            "value": 0,
+                            "vector": false,
+                            "calc_type": "uint"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "execution_rate",
+                            "value": 0.0001,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "cpd_visible",
+                            "value": true,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "enable_snb",
+                            "value": false,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "snb_type",
+                            "value": "R1",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "R1",
+                            "value": "inf",
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "C1",
+                            "value": 1e-06,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "override_signal_name",
+                            "value": false,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "signal_name",
+                            "value": "",
+                            "vector": false,
+                            "calc_type": "string"
+                        }
+                    ],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083472317120,
+                            "name": "n_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083472317024,
+                            "name": "p_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [],
+                    "parent_comp_id": null,
+                    "target_cpu": null,
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ]
+                },
+                {
+                    "_cls": "Component",
+                    "id": 2083470900480,
+                    "name": "Vs1",
+                    "vars": {
+                        "number_of_terminals": 0
+                    },
+                    "comp_type": "src_voltage",
+                    "lib_fqn": "Sources.Voltage Source",
+                    "composite": false,
+                    "properties": [
+                        {
+                            "_cls": "Property",
+                            "name": "init_source_nature",
+                            "value": "Sine",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "signal_name",
+                            "value": "",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "init_const_value",
+                            "value": 0.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "execution_rate",
+                            "value": 0.0001,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "override_signal_name",
+                            "value": false,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "init_phase",
+                            "value": 0.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "R2",
+                            "value": 0.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "snb_type",
+                            "value": "R2",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "enable_snb",
+                            "value": false,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "cpd_visible",
+                            "value": true,
+                            "vector": false,
+                            "calc_type": "bool"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "spc_nb",
+                            "value": 0,
+                            "vector": false,
+                            "calc_type": "uint"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "init_rms_value",
+                            "value": 230.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "addr",
+                            "value": 0,
+                            "vector": false,
+                            "calc_type": "uint"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "L1",
+                            "value": 0.1,
+                            "vector": false,
+                            "calc_type": "real"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "parent_label",
+                            "value": "",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "type",
+                            "value": "signal generator",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "sig_input",
+                            "value": "False",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "param_set",
+                            "value": "1phase",
+                            "vector": false,
+                            "calc_type": "string"
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "init_frequency",
+                            "value": 50.0,
+                            "vector": false,
+                            "calc_type": "real"
+                        }
+                    ],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083470898752,
+                            "name": "p_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083470900720,
+                            "name": "n_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [],
+                    "parent_comp_id": null,
+                    "target_cpu": null,
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ]
+                },
+                {
+                    "_cls": "Component",
+                    "id": 2083470954800,
+                    "name": "V1",
+                    "vars": {},
+                    "comp_type": "Voltage Measurement",
+                    "lib_fqn": "Measurements.Voltage Measurement",
+                    "composite": true,
+                    "properties": [],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083470955184,
+                            "name": "n_node",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083470946368,
+                            "name": "p_node",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [
+                        {
+                            "_cls": "Mask",
+                            "vars": {
+                                "prop_names": [
+                                    "host_device",
+                                    "output_to_device"
+                                ],
+                                "ITEM_COMPONENT": "component",
+                                "bw_limit": false
+                            },
+                            "properties": [
+                                {
+                                    "_cls": "Property",
+                                    "name": "sig_output",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "addr",
+                                    "value": 0,
+                                    "vector": false,
+                                    "calc_type": "uint"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "feed_forward",
+                                    "value": "false",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "threshold",
+                                    "value": 0.0,
+                                    "vector": false,
+                                    "calc_type": "real"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "visible",
+                                    "value": true,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "comparator_enable",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "override_signal_name",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "cmp_abs_value",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "signal_name",
+                                    "value": "Va1",
+                                    "vector": false,
+                                    "calc_type": "signal_name"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "frequency",
+                                    "value": 10000.0,
+                                    "vector": false,
+                                    "calc_type": "real"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "execution_rate",
+                                    "value": 0.0001,
+                                    "vector": false,
+                                    "calc_type": "real"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "sig_output_filt_and_full_bw",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "bw_limit",
+                                    "value": "False",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "operator",
+                                    "value": "greater",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                }
+                            ]
+                        }
+                    ],
+                    "parent_comp_id": null,
+                    "target_cpu": null,
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ]
+                },
+                {
+                    "_cls": "Component",
+                    "id": 2083472537920,
+                    "name": "I1",
+                    "vars": {},
+                    "comp_type": "Current Measurement",
+                    "lib_fqn": "Measurements.Current Measurement",
+                    "composite": true,
+                    "properties": [],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083472317456,
+                            "name": "n_node",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083472538256,
+                            "name": "p_node",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [
+                        {
+                            "_cls": "Mask",
+                            "vars": {
+                                "prop_names": [
+                                    "host_device",
+                                    "output_to_device"
+                                ],
+                                "ITEM_COMPONENT": "component",
+                                "bw_limit": false
+                            },
+                            "properties": [
+                                {
+                                    "_cls": "Property",
+                                    "name": "feed_forward",
+                                    "value": "false",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "override_signal_name",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "bw_limit",
+                                    "value": "False",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "frequency",
+                                    "value": 10000.0,
+                                    "vector": false,
+                                    "calc_type": "real"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "sig_output",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "sig_output_filt_and_full_bw",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "operator",
+                                    "value": "greater",
+                                    "vector": false,
+                                    "calc_type": "string"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "visible",
+                                    "value": true,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "threshold",
+                                    "value": 0.0,
+                                    "vector": false,
+                                    "calc_type": "real"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "execution_rate",
+                                    "value": 0.0001,
+                                    "vector": false,
+                                    "calc_type": "real"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "signal_name",
+                                    "value": "I1_1",
+                                    "vector": false,
+                                    "calc_type": "signal_name"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "comparator_enable",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "cmp_abs_value",
+                                    "value": false,
+                                    "vector": false,
+                                    "calc_type": "bool"
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "addr",
+                                    "value": 0,
+                                    "vector": false,
+                                    "calc_type": "uint"
+                                }
+                            ]
+                        }
+                    ],
+                    "parent_comp_id": null,
+                    "target_cpu": null,
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ]
+                },
+                {
+                    "_cls": "Component",
+                    "id": 2083472317408,
+                    "name": "R1",
+                    "vars": {},
+                    "comp_type": "pas_resistor",
+                    "lib_fqn": "Passive Components.Resistor",
+                    "composite": false,
+                    "properties": [
+                        {
+                            "_cls": "Property",
+                            "name": "resistance",
+                            "value": 0.1,
+                            "vector": false,
+                            "calc_type": "real"
+                        }
+                    ],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083472317360,
+                            "name": "n_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 2083472317264,
+                            "name": "p_node",
+                            "kind": "pe",
+                            "dimension": [],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [],
+                    "parent_comp_id": null,
+                    "target_cpu": null,
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ]
+                }
+            ]
+        }
+    ],
+    "interface_descr": null
+}

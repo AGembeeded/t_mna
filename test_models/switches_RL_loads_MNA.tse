@@ -1,0 +1,347 @@
+version = 4.2
+
+//
+// Saved by sw version: 2020.3
+// Save timestamp: 09-Dec-2020 @ 12:57:24 PM
+//
+
+model "switches_RL_loads_MNA" {
+    configuration {
+        hil_device = "HIL402"
+        hil_configuration_id = 1
+        simulation_method = bilinear
+        simulation_time_step = 1e-6
+        simulation_discret_scaling = 1.0
+        dsp_timer_periods = 100e-6, 50e-3
+        ss_calc_method = "systematic elimination"
+        enb_pole_shift = True
+        enb_gds_oversampling = True
+        show_modes = False
+        device_ao_limit_enable = False
+        cpl_stb = False
+        enb_dep_sw_detect = False
+        code_section = "internal memory"
+        data_section = "internal memory"
+        sys_sp_rate_1 = 0.0001
+        sys_sp_rate_2 = 0.05
+        sys_real_type_precision = "default"
+        user_real_type_precision = "default"
+        sys_cpu_optimization = "high"
+        user_cpu_optimization = "high"
+        user_cpu_part_option = "default"
+        matrix_based_reduction = True
+        cpl_dynamics_analysis = False
+        export_ss_to_pickle = False
+        cce_platform = "generic"
+        cce_use_relative_names = False
+        cce_type_mapping_real = "double"
+        cce_type_mapping_uint = "unsigned int"
+        cce_type_mapping_int = "int"
+        cce_directory = ""
+        cce_custom_type_int = ""
+        cce_custom_type_uint = ""
+        cce_custom_type_real = ""
+    }
+
+    component Subsystem Root {
+        component src_voltage Vs1 {
+            init_rms_value = "230"
+            init_source_nature = "Sine"
+        }
+        [
+            position = 8144, 8200
+            rotation = right
+        ]
+
+        component pas_resistor R1 {
+            resistance = "1e-1"
+        }
+        [
+            position = 8264, 8120
+        ]
+
+        component pas_inductor L1 {
+        }
+        [
+            position = 8432, 8120
+        ]
+
+        component pas_inductor L2 {
+        }
+        [
+            position = 8752, 8120
+        ]
+
+        component "core/Single Pole Single Throw Contactor" S1 {
+        }
+        [
+            position = 8560, 8120
+            size = 64, 32
+        ]
+
+        component pas_resistor R3 {
+            resistance = "0.1"
+        }
+        [
+            position = 9016, 8216
+            rotation = right
+        ]
+
+        component "core/Voltage Measurement" V1 {
+        }
+        [
+            position = 8632, 8224
+            rotation = right
+            size = 64, 32
+        ]
+
+        component "core/Current Measurement" I_L1 {
+        }
+        [
+            position = 8352, 8120
+            size = 64, 32
+        ]
+
+        component "core/Current Measurement" I_L2 {
+        }
+        [
+            position = 8840, 8120
+            size = 64, 32
+        ]
+
+        component pas_resistor R2 {
+            resistance = "1e-3"
+        }
+        [
+            position = 8760, 8024
+        ]
+
+        component "core/Single Pole Single Throw Contactor" S2 {
+        }
+        [
+            position = 8864, 8024
+            size = 64, 32
+        ]
+
+        component "core/Current Measurement" I_S2 {
+        }
+        [
+            position = 8968, 8024
+            size = 64, 32
+        ]
+
+        component pas_capacitor C1 {
+            capacitance = "1e-4"
+        }
+        [
+            position = 9256, 8264
+            rotation = right
+        ]
+
+        component pas_resistor R4 {
+        }
+        [
+            position = 9256, 8168
+            rotation = right
+        ]
+
+        component "core/Single Pole Single Throw Contactor" S3 {
+        }
+        [
+            position = 9080, 8120
+            size = 64, 32
+        ]
+
+        component "core/Current Measurement" I_S3 {
+        }
+        [
+            position = 9184, 8120
+            size = 64, 32
+        ]
+
+        component "core/Voltage Measurement" V2 {
+        }
+        [
+            position = 9336, 8264
+            rotation = right
+            size = 64, 32
+        ]
+
+        junction Junction2 pe
+        [
+            position = 8632, 8304
+        ]
+
+        junction Junction3 pe
+        [
+            position = 8632, 8120
+        ]
+
+        junction Junction9 pe
+        [
+            position = 8672, 8120
+        ]
+
+        junction Junction10 pe
+        [
+            position = 9016, 8120
+        ]
+
+        junction Junction11 pe
+        [
+            position = 9016, 8120
+        ]
+
+        junction Junction12 pe
+        [
+            position = 9016, 8304
+        ]
+
+        junction Junction13 pe
+        [
+            position = 9256, 8304
+        ]
+
+        junction Junction14 pe
+        [
+            position = 9256, 8224
+        ]
+
+        connect Vs1.p_node R1.p_node as Connection5
+        connect Vs1.n_node Junction2 as Connection10
+        [
+            breakpoints = 8144, 8304; 8632, 8304
+        ]
+        connect V1.n_node Junction2 as Connection12
+        connect L1.n_node S1.a_in as Connection13
+        [
+            breakpoints = 8496, 8120
+        ]
+        connect Junction3 S1.a_out as Connection15
+        connect V1.p_node Junction3 as Connection16
+        connect L1.p_node I_L1.n_node as Connection17
+        connect I_L1.p_node R1.n_node as Connection18
+        connect L2.n_node I_L2.p_node as Connection19
+        connect I_S2.p_node S2.a_out as Connection64
+        connect S2.a_in R2.n_node as Connection65
+        connect L2.p_node Junction9 as Connection66
+        connect Junction9 Junction3 as Connection67
+        connect R2.p_node Junction9 as Connection68
+        connect I_L2.n_node Junction10 as Connection69
+        connect Junction10 R3.p_node as Connection70
+        connect I_S3.p_node S3.a_out as Connection72
+        connect I_S2.n_node Junction11 as Connection73
+        connect Junction11 Junction10 as Connection74
+        connect S3.a_in Junction11 as Connection75
+        connect I_S3.n_node R4.p_node as Connection76
+        connect Junction2 Junction12 as Connection77
+        connect Junction12 R3.n_node as Connection78
+        connect C1.n_node Junction13 as Connection81
+        connect Junction13 Junction12 as Connection82
+        connect V2.n_node Junction13 as Connection83
+        connect R4.n_node Junction14 as Connection84
+        connect Junction14 C1.p_node as Connection85
+        connect V2.p_node Junction14 as Connection86
+    }
+
+    default {
+        pas_capacitor {
+            capacitance = "1e-6"
+            initial_voltage = "0"
+            pole_shift_ignore = "False"
+            visible = "True"
+        }
+
+        pas_inductor {
+            inductance = "1e-3"
+            initial_current = "0.0"
+            pole_shift_ignore = "False"
+            visible = "True"
+        }
+
+        pas_resistor {
+            resistance = "1"
+        }
+
+        src_voltage {
+            sig_input = "False"
+            type = "signal generator"
+            param_set = "1phase"
+            parent_label = ""
+            addr = "0"
+            spc_nb = "0"
+            execution_rate = "100e-6"
+            cpd_visible = "True"
+            enable_snb = "False"
+            snb_type = "R2"
+            R2 = "0.0"
+            L1 = "0.1"
+            override_signal_name = "False"
+            signal_name = ""
+            init_source_nature = "Constant"
+            init_const_value = "0.0"
+            init_rms_value = "0.0"
+            init_frequency = "50.0"
+            init_phase = "0.0"
+        }
+
+        "core/Current Measurement" {
+            bw_limit = "False"
+            frequency = "10e3"
+            comparator_enable = "False"
+            operator = "greater"
+            threshold = "0"
+            cmp_abs_value = "False"
+            feed_forward = "false"
+            sig_output = "False"
+            sig_output_filt_and_full_bw = "False"
+            execution_rate = "100e-6"
+            addr = "0"
+            nd_msr_estimation = "false"
+            dev_cpl_msr = "false"
+            host_device = "0"
+            output_to_device = "0"
+            dev_cpl_index = "0"
+            dev_cpl_var_nb = "0"
+            visible = "True"
+            override_signal_name = "False"
+            signal_name = ""
+        }
+
+        "core/Single Pole Single Throw Contactor" {
+            ctrl_src = "Digital input"
+            Sa = "1"
+            Sa_logic = "active high"
+            enable_fb_out = "False"
+            fb_out_type = "real"
+            execution_rate = "inherit"
+            initial_state = "off"
+            on_delay = "0"
+            off_delay = "0"
+            switching = "any current"
+        }
+
+        "core/Voltage Measurement" {
+            bw_limit = "False"
+            frequency = "10e3"
+            comparator_enable = "False"
+            operator = "greater"
+            threshold = "0"
+            cmp_abs_value = "False"
+            feed_forward = "false"
+            sig_output = "False"
+            sig_output_filt_and_full_bw = "False"
+            execution_rate = "100e-6"
+            addr = "0"
+            nd_msr_estimation = "false"
+            dev_cpl_msr = "false"
+            host_device = "0"
+            output_to_device = "0"
+            dev_cpl_index = "0"
+            dev_cpl_var_nb = "0"
+            visible = "True"
+            override_signal_name = "False"
+            signal_name = ""
+        }
+    }
+}
